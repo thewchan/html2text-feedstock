@@ -10,7 +10,7 @@ source:
   sha256: 948a645f8f0bc3abe7fd587019a2197a12436cd73d0d4908af95bfc8da337588
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - html2text = html2text.cli:main
@@ -20,7 +20,9 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
-    - setuptools
+    - setuptools >=61.2
+    - setuptools_scm >=3.4.3
+    - tomli
   run:
     - python >={{ python_min }}
 
@@ -36,8 +38,7 @@ test:
 
 about:
   home: https://github.com/Alir3z4/html2text/
-  license: GNU General Public (GPL)
-  license_family: LGPL
+  license: GPL-3.0-or-later
   license_file: COPYING
   summary: Turn HTML into equivalent Markdown-structured text.
 
